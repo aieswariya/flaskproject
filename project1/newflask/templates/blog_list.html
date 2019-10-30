@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+ 
+{% block bloglist %}
+  <h1><center> MyPost </center></h1>
+
+    <div>
+         <table>
+                <thead>
+                    <th> Title </th>
+                    <th> Message </th>
+                    
+                </thead>
+            {% for i in item %}
+               <tr>
+                   <td> {{i.title}} </td>
+                   <td> {{i.message}} </td>
+                   <td><a class="p-8 text-light" href="/blog_delete?user_id={{i.id}}">Delete</a></td>
+                    
+                </tr>
+            {% endfor %}
+         </table>
+               
+   </div>
+{% endblock %}

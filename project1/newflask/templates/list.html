@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+ 
+{% block list %}
+  <h1><center> Views Selected Record </center></h1>
+
+    <div>
+        <table cellspacing="10">
+            <thead>
+                  <th>Name</th>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Account_No</th>
+                  <th>IFSC_Code</th>
+                  <th>PaymentType</th>
+                  <th>TransactionType</th>
+                  <th>Usertype</th>
+
+            </thead>
+            {% for i in views %}
+               <tr>
+                  <td> {{i.name}} </td>
+                  <td> {{i.username}} </td>
+                  <td> {{i.email}} </td>
+                  <td> {{i.accntno}} </td>
+                  <td> {{i.ifsccode}} </td>
+                  <td>{{i.payment_type}} </td>
+                  <td> {{i.transaction_type}} </td>
+                  <td> {{i.usertype}} </td>
+                  <td><a class="p-8 text-light" href="/update?id={{i.id}}">Update</a></td>
+                  <td><a class="p-8 text-light" href="/views?id={{i.id}}">View</a></td>
+                  <td><a class="p-8 text-light" href="/delete?id={{i.id}}">Delete</a></td>
+                  <td><a class="p-8 text-light" href="/bloglist?user_id={{i.id}}">MyPost</a></td>
+                  
+               </tr>
+            {% endfor %}
+        
+        </table>
+               
+   </div>
+{% endblock %}

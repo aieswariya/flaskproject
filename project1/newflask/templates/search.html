@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+ 
+{% block search %}
+    <h1><center> View  All Records </center></h1>
+    
+    
+    <form method="POST" action="/search">
+        
+        {{ form.hidden_tag() }}
+        <p><center>
+            {{ form.username(size=32,placeholder='Username') }}
+            {{ form.submit() }}</center>
+        </p>
+        {% if serc %}
+            <table align="center" >
+                <thead >
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                </thead>
+            {% for k in serc%}
+                <tr>
+                   <td>{{k.name}}</td>
+                   <td>{{k.username}}</td>
+                   <td>{{k.email}}</td>
+                </tr>
+            {% endfor %}
+        {% endif %}               
+            </table>
+    </form>
+
+    <table align="center">
+        <thead , cellspacing="30px">
+            <th>   Name    </th>
+            <th>   Username    </th>
+            <th>   Email   </th>
+        </thead>
+    {% for k in views %}
+        <tr>
+          <td>  {{k.name}}  </td>
+          <td>  {{k.username}}  </td>
+          <td>  {{k.email}} </td>
+          <td><a class="p-8 text-light" href="/bloglist?user_id={{k.id}}">MyPost</a></td>
+        </tr>
+          
+       
+    {% endfor %}
+    </table>
+{% endblock %}

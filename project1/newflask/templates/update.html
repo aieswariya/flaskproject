@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+ 
+{% block update %}
+    <h1> <center> Update Profile </center></h1>
+    <form method="POST" action=" ">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=32) }}
+            {% for error in form.name.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}
+            {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=32) }}
+            {% for error in form.email.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{ form.accntno.label }}<br>
+            {{ form.accntno(size=32) }}
+            {% for error in form.accntno.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}
+        </p>
+        
+        <p>
+            {{ form.ifsccode.label }}<br>
+            {{ form.ifsccode(size=32) }}
+            {% for error in form.ifsccode.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.payment_type.label }}
+            {{ form.payment_type }}
+            {% for error in form.payment_type.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.transaction_type.label }}
+            {{ form.transaction_type}}
+            {% for error in form.transaction_type.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.usertype.label }}
+            {{ form.usertype}}
+            {% for error in form.usertype.errors %}
+            <span style="color: red;">[{{error}}]</span>
+            {% endfor %}
+        </p>
+                
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

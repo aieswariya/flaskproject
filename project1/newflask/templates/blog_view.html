@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+ 
+{% block blogview %}
+  <h1> <center> View  All Post </center> </h1>
+  <h1><a class="p-8 text-light" href="/blogreg">Create</a></h1>
+  <body>
+    <div>
+        <table>
+            <thead>
+                 <th>  Title   </th>
+                 <th>  Message  </th>
+                    
+            </thead>
+            {% for k in views %}
+               <tr>
+                   <td> {{k.title}} </td>
+                   <td> {{k.message}} </td>
+                   
+                   
+               
+               </tr>
+            {% endfor %}
+        
+        </table>
+               
+   </div>
+  </body>
+{% endblock %}

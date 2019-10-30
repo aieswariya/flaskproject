@@ -1,0 +1,108 @@
+<!doctype html>
+    
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/css/normalize.min.css">
+        <link rel="stylesheet" href="static/css/main.css">
+        <script src="static/js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon" />
+        <style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 100%;
+            }
+            
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+            
+            </style>
+    </head>
+    <body>
+        <div class="header-container">
+                <header class="wrapper clearfix">
+                    <h1 class="title"> Employee Site </h1>
+                    
+                    <nav>
+                        <ul>
+                            
+                            <li><a class="p-8 text-light" href="/login">Log In</a></li>
+                            <li><a class="p-8 text-light" href="/search">View All</a></li>
+                            <li><a class="p-8 text-light" href="/register">Register</a></li>
+                            <li><a class="p-8 text-light" href="/blogview">Post</a></li>
+                         
+                        </ul>
+                    </nav>
+                </header>
+        </div>
+        
+        
+
+        <div class="main-container">
+            <div class="main wrapper clearfix">
+                {% block content %}
+                {% endblock %}
+            
+                {% block register %}
+                {% endblock %}           
+                
+                {% block search %}
+                {% endblock %}
+
+                {% block detail %}
+                {% endblock %}
+
+                {% block update %}
+                {% endblock %}
+
+                {% block list %}
+                {% endblock %}
+
+                {% block blogview %}
+                {% endblock %}
+
+                {% block blogreg %}
+                {% endblock %}
+               
+                {% block bloglist %}
+                {% endblock %}
+
+                
+               
+
+
+
+            </div> 
+        </div> 
+
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+
+
+        <div class="footer-container">
+            <footer class="wrapper clearfix">
+                <p><center> copyright © 2019 CENTROXY SOLUTION PVT. LTD </center></a></p>  
+            </footer> 
+                            
+        </div>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
+
